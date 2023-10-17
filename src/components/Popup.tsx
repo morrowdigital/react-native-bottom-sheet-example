@@ -10,7 +10,6 @@ export function Popup({
   showPopup: boolean
   setShowPopup: (b: boolean) => void
 }) {
-  //   const [currentIndex, setCurrentIndex] = useState(-1)
   const bottomSheetRef = useRef<BottomSheet>(null)
   const popupSnappoints = useMemo(() => ["30%"], [])
 
@@ -50,37 +49,13 @@ export function Popup({
 }
 
 const styles = StyleSheet.create({
-  btn: {
-    flex: 1,
-    justifyContent: "center",
-    elevation: 8,
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-  },
   btnWrap: {
     padding: 12,
-  },
-  container: {
-    flex: 1,
-    padding: 24,
-    // backgroundColor: "rgb(59, 34, 168)",
   },
   contentContainer: {
     marginTop: 24,
     flex: 1,
     alignItems: "center",
-  },
-  shadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 8,
-    },
-    shadowOpacity: 0.78,
-    shadowRadius: 12,
-
-    elevation: 24,
   },
   popupText: {
     fontSize: 44,
@@ -90,12 +65,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // add horizontal space
     marginHorizontal: 34,
-    // padding: 24,
-    // backgroundColor: "red",
-  },
-  popupWrap: {
-    // flex: 1,
-    // padding: 24,
-    // backgroundColor: "grey",
   },
 })
