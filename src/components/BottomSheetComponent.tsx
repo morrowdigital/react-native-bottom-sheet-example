@@ -1,7 +1,7 @@
 import BottomSheet from "@gorhom/bottom-sheet"
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { MyButton } from "./MyButton"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { StyleSheet, Text, View } from "react-native"
+import { MyButton } from "./MyButton"
 
 export function BottomSheetComponent({
   showBottomSheet,
@@ -10,16 +10,22 @@ export function BottomSheetComponent({
   showBottomSheet: boolean
   setShowBottomSheet: (b: boolean) => void
 }) {
+  // create a reference to the bottom sheet
   const bottomSheetRef = useRef<BottomSheet>(null)
-  const snapPoints = useMemo(() => ["30%", "60%"], [])
 
+  //custom snap points
+  const snapPoints = ["30%", "60%"]
+
+  //track the current snap point index
   const [currentIndex, setCurrentIndex] = useState(-1)
 
+  // track on which snap point index bottom sheet is currently
   const handleSheetChanges = useCallback((index: number) => {
     setShowBottomSheet(index > -1)
     setCurrentIndex(index)
   }, [])
 
+  // expand bottom sheet when showBottomSheet is true to the first snap point
   useEffect(() => {
     if (showBottomSheet) {
       bottomSheetRef.current?.snapToIndex(0)
@@ -42,6 +48,7 @@ export function BottomSheetComponent({
         <View style={styles.btnWrap}>
           <MyButton
             onPress={() => {
+              // if current snap point is 1, snap to 0, else snap to 1
               if (currentIndex == 1) {
                 bottomSheetRef.current?.snapToIndex(0)
               } else {
