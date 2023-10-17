@@ -1,5 +1,5 @@
 import BottomSheet from "@gorhom/bottom-sheet"
-import { useEffect, useMemo, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { MyButton } from "./MyButton"
 
@@ -11,7 +11,7 @@ export function Popup({
   setShowPopup: (b: boolean) => void
 }) {
   const bottomSheetRef = useRef<BottomSheet>(null)
-  const popupSnappoints = useMemo(() => ["30%"], [])
+  const popupSnappoints = ["30%"]
 
   useEffect(() => {
     if (showPopup) {
