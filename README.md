@@ -7,4 +7,4 @@ It shows two diffeerent compoent designs.
 - Regular bottom sheet
 - Bottom sheet modal
 
-Make sure you check out the [blog post](#)
+Make sure you check out the [blog post](https://www.themorrow.digital/blog/an-introduction-to-react-native-bottom-sheet)
